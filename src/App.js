@@ -4,6 +4,59 @@ import BtnToNaver from "./components/BtnToNaver";
 import ClassState from "./components/ClassState";
 import FuntionalState from "./components/FunctionalState";
 import StatePractice from "./components/StatePractice";
+import CounterComponent from "./components/CounterComponent";
+import CustomList from "./components/CustomList";
+import ChangeObj from "./components/ChangeObj";
+import CustomObj from "./components/CustomObj";
+import TestCss from "./components/TestCss";
+import TestStyled from "./components/TestStyled";
+import ConditionalRender from "./components/ConditionalRender";
+
+function App() {
+  const [condition, setCondition] = useState("보이기");
+  const onChange = () => {
+    condition === "보이기" ? setCondition("감추기") : setCondition("보이기");
+  };
+  return (
+    <div className="App">
+      {condition === "감추기" && <ConditionalRender />}
+      <button onClick={onChange}>{condition}</button>
+    </div>
+  );
+}
+/* function App() {
+  const pororoObj = [
+    {
+      name: "뽀로로",
+      age: 5,
+      nickname: "사고뭉치",
+    },
+    {
+      name: "루피",
+      age: 4,
+      nickname: "공주님",
+    },
+    {
+      name: "크롱이",
+      age: 5,
+      nickname: "장난꾸러기",
+    },
+  ];
+  return (
+    <div className="App">
+      <CustomObj obj={pororoObj} />
+    </div>
+  );
+} */
+
+/* function App() {
+  const nameArr = ["뽀로로", "루피", "크롱이"];
+  return (
+    <div className="App">
+      <CustomList arr={nameArr} />
+    </div>
+  );
+} */
 
 /* function App() {
   return (
@@ -17,12 +70,12 @@ import StatePractice from "./components/StatePractice";
   );
 } */
 
-function App() {
+/* function App() {
   return (
     <div className="App">
-      <StatePractice />
+      <TopHeader text="Go to naver" name="klaus" href="http://naver.com" />
     </div>
   );
 }
-
+ */
 export default App;

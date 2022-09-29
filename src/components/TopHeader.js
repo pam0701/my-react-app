@@ -1,12 +1,25 @@
 import React from "react";
-class TopHeader extends React.Component {
-  render() {
-    return <h1>Hello, Component world!</h1>;
-  }
+
+function TopHeader(props) {
+  const { text, name, href } = props;
+
+  return (
+    <div>
+      <h1>{name}님 반값습니다.</h1>
+      <a href={href}>{text}</a>
+    </div>
+  );
 }
 
-/* const TopHeader = ({ title }) => {
-  return <TopHeaderBlock>{title}</TopHeaderBlock>;
-}; */
-
 export default TopHeader;
+
+/* export default function TopHeader(props) {
+  const { text, name, href } = props;
+
+  return (
+    <div>
+      <h1>{name}님 반갑습니다! </h1>
+      <a href={href}>{text}</a>
+    </div>
+  );
+} */
