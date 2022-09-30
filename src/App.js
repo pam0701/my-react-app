@@ -1,3 +1,4 @@
+import { useState } from "react";
 import TopHeader from "./components/TopHeader";
 import ImgComponent from "./components/ImgComponent";
 import BtnToNaver from "./components/BtnToNaver";
@@ -11,8 +12,21 @@ import CustomObj from "./components/CustomObj";
 import TestCss from "./components/TestCss";
 import TestStyled from "./components/TestStyled";
 import ConditionalRender from "./components/ConditionalRender";
+import TestUseEffect from "./components/TestUseEffect";
+import Timer from "./components/Timer";
 
 function App() {
+  const [show, setShow] = useState(false);
+
+  return (
+    <div className="App">
+      {show && <Timer />}
+      <button onClick={() => setShow(!show)}>보이기</button>
+    </div>
+  );
+}
+
+/* function App() {
   const [condition, setCondition] = useState("보이기");
   const onChange = () => {
     condition === "보이기" ? setCondition("감추기") : setCondition("보이기");
@@ -23,7 +37,7 @@ function App() {
       <button onClick={onChange}>{condition}</button>
     </div>
   );
-}
+} */
 /* function App() {
   const pororoObj = [
     {
