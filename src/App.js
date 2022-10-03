@@ -18,9 +18,20 @@ import PracticeTimer from "./components/PracticeTimer";
 import TestUseMemo from "./components/TestUseMemo";
 import UsingUseMemo from "./components/UsingUseMemo";
 import Image from "./components/Image";
+import WelcomeDialog from "./components/WelcomeDialog";
 import FancyBorder from "./components/FancyBorder";
 
 function App() {
+  return (
+    <div className="App">
+      <FancyBorder color="blue">
+        <WelcomeDialog />
+      </FancyBorder>
+    </div>
+  );
+}
+
+/* function App() {
   return (
     <div className="App">
       <FancyBorder color="blue">
@@ -29,7 +40,7 @@ function App() {
       </FancyBorder>
     </div>
   );
-}
+} */
 
 /* function App() {
   return (
