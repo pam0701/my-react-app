@@ -14,8 +14,20 @@ import TestStyled from "./components/TestStyled";
 import ConditionalRender from "./components/ConditionalRender";
 import TestUseEffect from "./components/TestUseEffect";
 import Timer from "./components/Timer";
+import PracticeTimer from "./components/PracticeTimer";
+import TestUseMemo from "./components/TestUseMemo";
+import UsingUseMemo from "./components/UsingUseMemo";
+import Image from "./components/Image";
 
 function App() {
+  return (
+    <div className="App">
+      <Image />
+    </div>
+  );
+}
+
+/* function App() {
   const [show, setShow] = useState(false);
 
   return (
@@ -24,7 +36,7 @@ function App() {
       <button onClick={() => setShow(!show)}>보이기</button>
     </div>
   );
-}
+} */
 
 /* function App() {
   const [condition, setCondition] = useState("보이기");

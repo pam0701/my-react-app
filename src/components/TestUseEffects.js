@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
-function TestUseEffect() {
+export default function TestUseEffect() {
   const [count, setCount] = useState(0);
-  const [text, setText] = useState("입력해주세요!");
+  const [text, setText] = useState("입력해 주세요!");
   const inputValue = useRef();
 
   const onButtonClick = () => {
@@ -14,19 +14,15 @@ function TestUseEffect() {
   };
 
   useEffect(() => {
-    console.log("🧨 렌더링 될 때마다 불러와지는 useEffect");
+    console.log("🌇 렌더링 할 때마다 실행되는 useEffect");
   });
 
   useEffect(() => {
-    console.log("🎇 버튼 클릭 될 때마다 불러와지는 useEffect");
-  }, [count]);
+    console.log("🚁 둘 다 보고 있는 useEffect");
+  }, [count, text]);
 
   useEffect(() => {
-    console.log("🎊 키 입력 될 때마다 불러와지는 useEffect");
-  }, [text]);
-
-  useEffect(() => {
-    console.log("🎆 최초 렌더링시 에만 실행되는 useEffect");
+    console.log("🚧 최초 렌더링 시에만 실행되는 useEffect");
   }, []);
 
   return (
@@ -36,10 +32,8 @@ function TestUseEffect() {
       <br />
       <br />
       <br />
-      <input type="text" ref={inputValue} onChange={onInputChange} />
+      <input ref={inputValue} onChange={onInputChange}></input>
       <h1>{text}</h1>
     </>
   );
 }
-
-export default TestUseEffect;
