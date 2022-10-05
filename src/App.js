@@ -18,14 +18,26 @@ import PracticeTimer from "./components/PracticeTimer";
 import TestUseMemo from "./components/TestUseMemo";
 import UsingUseMemo from "./components/UsingUseMemo";
 import Image from "./components/Image";
+import FancyBorder from "./components/FancyBorder";
 
 function App() {
+  return (
+    <div className="App">
+      <FancyBorder color="blue">
+        <h1>Hello, props.children</h1>
+        <p>이건 매우 유용한 기술입니다요!</p>
+      </FancyBorder>
+    </div>
+  );
+}
+
+/* function App() {
   return (
     <div className="App">
       <Image />
     </div>
   );
-}
+} */
 
 /* function App() {
   const [show, setShow] = useState(false);
