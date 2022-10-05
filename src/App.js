@@ -24,8 +24,14 @@ import FancyBorder from "./components/FancyBorder";
 function App() {
   return (
     <div className="App">
-      <FancyBorder color="blue">
-        <WelcomeDialog />
+      <FancyBorder color="red">
+        <Dialog
+          color="orange"
+          title={<button onClick={() => alert("Welcome!")}>웰컴 버튼!</button>}
+          message="회원 가입이 필요한 서비스 입니다"
+        >
+          <a href="#">회원 가입 페이지로 이동</a>
+        </Dialog>
       </FancyBorder>
     </div>
   );
