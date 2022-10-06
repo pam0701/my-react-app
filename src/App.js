@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import TopHeader from "./components/TopHeader";
 import ImgComponent from "./components/ImgComponent";
@@ -12,7 +13,7 @@ import CustomObj from "./components/CustomObj";
 import TestCss from "./components/TestCss";
 import TestStyled from "./components/TestStyled";
 import ConditionalRender from "./components/ConditionalRender";
-import TestUseEffect from "./components/TestUseEffect";
+/* import TestUseEffect from "./components/TestUseEffect"; */
 import Timer from "./components/Timer";
 import PracticeTimer from "./components/PracticeTimer";
 import TestUseMemo from "./components/TestUseMemo";
@@ -20,8 +21,29 @@ import UsingUseMemo from "./components/UsingUseMemo";
 import Image from "./components/Image";
 import WelcomeDialog from "./components/WelcomeDialog";
 import FancyBorder from "./components/FancyBorder";
+import { Routes, Route } from "react-router-dom";
+import Profile from "./components/Profile";
+import Board from "./components/Board";
+import Header from "./components/Header";
+import NotFound from "./components/NotFound";
+import BoardDetail from "./components/BoardDetail";
+import SignUpDialog from "./components/SignUpDialog";
 
 function App() {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Header />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="board/" element={<Board />} />
+        <Route path="board/:boardID" element={<BoardDetail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </div>
+  );
+}
+
+/* function App() {
   return (
     <div className="App">
       <FancyBorder color="red">
@@ -35,7 +57,7 @@ function App() {
       </FancyBorder>
     </div>
   );
-}
+} */
 
 /* function App() {
   return (
